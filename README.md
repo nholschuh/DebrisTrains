@@ -2,6 +2,8 @@
 
 This repository contains the code used to generate the data products and figures for the manuscript: "Entrained debris records regrowth of the Greenland Ice Sheet after the last interglacial"
 
+NOTE: This repository is still being cleaned up before publication, to make the code runnable using only data provided through the associated data repository. Our intention is to have the repository fully portable by Jan 9th, 2025.
+
 It is organized into two main blocks:
 
 ## 1. MATLAB example scripts (OPR + MUSIC products)
@@ -37,4 +39,5 @@ The notebooks assume that you have access to the processed data files referenced
 The radar products used by these scripts and notebooks are archived in the (Amherst College) Harvard Dataverse dataset associated with the manuscript:
 
 doi.org/10.7910/DVN/9K2J6R
+
 
