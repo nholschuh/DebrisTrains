@@ -51,6 +51,7 @@ The notebooks assume that you have access to the processed data files referenced
 **Install all requirements:**
 ```bash
 pip install numpy scipy matplotlib pandas xarray tqdm earthpy rioxarray statsmodels scikit-learn miepython
+```
 
 ## Data availability
 
