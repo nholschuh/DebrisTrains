@@ -8,7 +8,7 @@ It is organized into two main blocks:
 
 ## 1. MATLAB example scripts (OPR + MUSIC products)
 
-The `RadarProcessing_Scripts/` directory contains an example script and parameter files that use MATLAB to run the Open Polar Radar (OPR) Toolbox and generate MUSIC radar data volumes.
+The `RadarProcessing_Scripts/` directory contains a readme, a set of example scripts, and parameter files that use MATLAB to run the Open Polar Radar (OPR) Toolbox and generate MUSIC radar data volumes.
 
 These scripts are intended to:
 - demonstrate the processing workflow used to create the MUSIC 3D volumes included in the associated Dataverse deposit
@@ -58,5 +58,6 @@ pip install numpy scipy matplotlib pandas xarray tqdm earthpy rioxarray statsmod
 The radar products used by these scripts and notebooks are archived in the (Amherst College) Harvard Dataverse dataset associated with the manuscript:
 
 [doi.org/10.7910/DVN/9K2J6R](https://doi.org/10.7910/DVN/9K2J6R)
+
 
 
