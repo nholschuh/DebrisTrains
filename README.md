@@ -34,6 +34,24 @@ These notebooks are designed to:
 
 The notebooks assume that you have access to the processed data files referenced in the manuscript. These data are available in the accompanying Harvard Dataverse dataset (see below).
 
+## Notebook dependencies
+
+- `numpy`
+- `scipy`
+- `matplotlib`
+- `pandas`
+- `xarray`
+- `tqdm`
+- `earthpy`
+- `rioxarray`
+- `statsmodels`
+- `scikit-learn`
+- `miepython`
+
+**Install all requirements:**
+```bash
+pip install numpy scipy matplotlib pandas xarray tqdm earthpy rioxarray statsmodels scikit-learn miepython
+
 ## Data availability
 
 The radar products used by these scripts and notebooks are archived in the (Amherst College) Harvard Dataverse dataset associated with the manuscript:

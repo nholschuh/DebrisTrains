@@ -1,0 +1,18 @@
+# Core scientific stack
+numpy
+scipy
+matplotlib
+pandas
+xarray
+tqdm
+
+# Geo / raster utilities
+earthpy
+rioxarray
+
+# Stats / ML
+statsmodels
+scikit-learn
+
+# Optics / radiative transfer
+miepython
