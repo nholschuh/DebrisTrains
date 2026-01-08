@@ -57,6 +57,6 @@ pip install numpy scipy matplotlib pandas xarray tqdm earthpy rioxarray statsmod
 
 The radar products used by these scripts and notebooks are archived in the (Amherst College) Harvard Dataverse dataset associated with the manuscript:
 
-doi.org/10.7910/DVN/9K2J6R
+[doi.org/10.7910/DVN/9K2J6R](https://doi.org/10.7910/DVN/9K2J6R)
 
 
