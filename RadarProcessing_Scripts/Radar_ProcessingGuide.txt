@@ -1,4 +1,4 @@
-RADAR DATA PROCESSING AND REPRODUCIBILITY (OPR TOOLBOX)
+RADAR DATA PROCESSING NOTES
 -------------------------------------------------------------------
 
 This document describes how the radar products distributed with this project
@@ -32,9 +32,9 @@ SUMMARY OF PROCESSING WORKFLOW
 
 The delivered products were generated using a standard OPR processing sequence:
 
-SAR processing (precursor generation)
+SAR processing
 
-Generates SAR-focused (or semi-focused) radar products required for
+Generates SAR-focused radar products required for
 subsequent image formation steps.
 
 Array processing (final image formation)
@@ -45,14 +45,12 @@ Can generate either:
 a) 2-D SLC-style products via the “standard_phase” workflow, or
 b) 3-D tomographic products via the “music” workflow
 
-Collation and assembly
+Collate
 
 Merges products produced under multiple transmit configurations into a
 unified image volume.
 
-May optionally run layer tracking routines.
-
-KEY SCRIPTS USED
+SCRIPTS USED
 
 The processing pipeline is orchestrated by a top-level MATLAB driver script:
 
@@ -76,7 +74,7 @@ final image volume.
 Together, these scripts implement the pipeline from SAR precursor generation
 to the final derived products that are distributed.
 
-PARAMETER SPREADSHEETS (CRITICAL FOR REPRODUCIBILITY)
+PARAMETER SPREADSHEETS
 
 OPR processing is controlled using parameter spreadsheets. These spreadsheets
 encode:
@@ -89,108 +87,31 @@ Radar waveform definitions (sampling rates, time gates, chirp settings)
 
 SAR processing parameters
 
-Array processing parameters (2-D vs 3-D workflows, beamforming choices)
+Array processing parameters (2-D vs 3-D workflows)
 
 Output, posting, and data product settings
-
-These spreadsheets are essential for reproducibility because they capture the
-radar settings and processing decisions required to recreate the products.
 
 Two example parameter spreadsheets are provided:
 
 rds_param_2011_Greenland_P3.xlsx
 rds_param_2012_Greenland_P3.xlsx
 
-These can be used as templates for re-running the pipeline, adapting the
-processing to other seasons, or documenting changes across campaigns.
-
-FILES PROVIDED
-
-The following files are included with this release:
-
-(1) Run_MultipleSteps_Greenland.m
-Type: MATLAB script
-Purpose:
-Top-level driver that orchestrates SAR processing, array processing,
-and final collation.
-Notes:
-Requires the OPR toolbox environment and a configured startup script
-(gRadar paths). Assumes access to raw data and support files.
-
-(2) Run09_sar_rds_ndh.m
-Type: MATLAB script
-Purpose:
-Executes SAR processing to generate precursor SAR products.
-Notes:
-Requires the parameter spreadsheet and access to raw data and support
-files (e.g., records/frames).
-
-(3) Run10_array_rds_ndh.m
-Type: MATLAB script
-Purpose:
-Executes array processing (2-D or 3-D depending on configuration).
-Notes:
-Depends on SAR outputs from Run09.
-
-(4) Run11_collate_Greenland.m
-Type: MATLAB script
-Purpose:
-Collates outputs across multiple transmit configurations into a single
-unified image volume and may run layer tracking.
-Notes:
-Depends on completed SAR and array processing outputs.
-
-(5) rds_param_2011_Greenland_P3.xlsx
-Type: Parameter spreadsheet
-Purpose:
-Defines radar settings, processing parameters, and run lists for the
-2011 Greenland P3 season.
-Notes:
-Used as a reproducibility template and record of processing decisions.
-
-(6) rds_param_2012_Greenland_P3.xlsx
-Type: Parameter spreadsheet
-Purpose:
-Defines radar settings, processing parameters, and run lists for the
-2012 Greenland P3 season.
-Notes:
-Used as an additional reproducibility template and comparison across
-seasons.
-
 PRACTICAL REQUIREMENTS TO REPRODUCE RESULTS
 
 To reproduce the results distributed with this dataset, a user will need:
 
-Access to the CReSIS/OPR environment
-
-Raw radar data are not distributed publicly due to volume.
+Access to the CReSIS/OPR environment, and the CReSIS data servers. Raw 
+radar data are prohibitively large to distribute via a web interface.
 
 Supporting metadata and intermediate products are stored on CReSIS
 servers and must be accessed there.
 
-OPR toolbox installed and configured
-
-A startup script must create and populate the global “gRadar” variable
-and set the MATLAB path to include OPR toolbox commands.
+OPR toolbox installed and configured.  A startup script must create 
+and populate the global “gRadar” variable and set the MATLAB path to 
+include OPR toolbox commands.
 
 gRadar must correctly point to raw data, support directories, and output
 product locations.
-
-Parameter spreadsheets
-
-Required to define radar settings, data selections, and processing
-parameters.
-
-Provided example spreadsheets demonstrate typical configurations.
-
-Adequate compute and storage
-
-SAR and array processing are computationally intensive and I/O heavy.
-
-These workflows are typically run on a cluster or within infrastructure
-located close to the data storage.
-
-SUGGESTED REPRODUCTION RECIPE (HIGH LEVEL)
 
 This is a practical, minimal set of steps for reproducing the products:
 
